@@ -16,7 +16,7 @@ pipeline {
 
         stage('Execute') {
             steps {
-               sh "newman run tests/smoke.postman_collection.json -e environments/dev.postman_environment.json"
+               sh "newman run tests/smoke.postman_collection.json -e environments/dev.postman_environment.json -r cli,junit"
             }
         }
     }
